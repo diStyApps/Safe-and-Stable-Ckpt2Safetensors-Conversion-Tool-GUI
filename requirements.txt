@@ -1,0 +1,5 @@
+torch 
+torchsde==0.2.5
+safetensors==0.2.5
+pysimplegui==4.60.4 
+pandas==1.3.5

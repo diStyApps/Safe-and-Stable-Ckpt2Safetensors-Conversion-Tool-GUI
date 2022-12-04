@@ -1,0 +1,8 @@
+name: st_gui
+channels:
+- nodefaults
+dependencies:
+- python=3.7
+- pip
+- pip:
+  - -r requirements.txt
