@@ -7,7 +7,7 @@ import webbrowser
 from threading import Thread
 from datetime import datetime as dt
 from safetensors.torch import save_file
-
+import hashlib
 COLOR_DARK_GREEN = '#78BA04'
 COLOR_DARK_BLUE = '#4974a5'
 COLOR_RED_ORANGE = '#C13515'
@@ -16,12 +16,15 @@ COLOR_DARK_GRAY = '#1F1F1F'
 COLOR_GREEN = '#43CD80'
 COLOR_DARK_GREEN2 = '#78BA04'
 
+HASH_START = 0x100000
+HASH_LENGTH = 0x10000
+
 _pytorch_file_extensions = {".ckpt"}
 
 file_ext = {("Stable Diffusion", "*.ckpt")}
 
 def main():
-    ver = '0.0.1'
+    ver = '0.0.2'
     sg.theme('Dark Gray 15')
     app_title = f"Safe & Stable - Ckpt2Safetensors Conversion Tool-GUI - Ver {ver}"
     pbar_progress_bar_key = 'progress_bar'
@@ -169,16 +172,20 @@ def main():
             cpbar.progress_bar_custom(idx-1,len(input_directory_path_list),start_time,window,pbar_progress_bar_key,"ckpt")
         convert_button_enable()
 
-
     def convert_to_st(checkpoint_path):
+        modelhash = model_hash(checkpoint_path)
         try:
             with torch.no_grad():
-                weights = torch.load(checkpoint_path)["state_dict"]
+                weights = torch.load(checkpoint_path, map_location=torch.device('cpu'))
+                if "state_dict" in weights:
+                    weights = weights["state_dict"]
+                    if "state_dict" in weights:
+                        weights.pop("state_dict")
                 file_name = f"{os.path.splitext(checkpoint_path)[0]}.safetensors"
 
-                print(f'Converting {checkpoint_path} to safetensors.')
+                print(f'Converting {checkpoint_path} [{modelhash}] to safetensors.')
                 save_file(weights, file_name)
-                print(f'Saving {file_name}.')
+                print(f'Saving {file_name} [{model_hash(file_name)}].')
 
         except Exception as e:
             if isinstance(e, (RuntimeError, EOFError)):
@@ -190,6 +197,13 @@ def main():
             else:
                 print(f'Error: {e}')
                 
+
+    def model_hash(filename):
+        with open(filename, "rb") as file:
+            m = hashlib.sha256()
+            file.seek(HASH_START)
+            m.update(file.read(HASH_LENGTH))
+            return m.hexdigest()[0:8]
 
     while True:
         event, values = window.read()
