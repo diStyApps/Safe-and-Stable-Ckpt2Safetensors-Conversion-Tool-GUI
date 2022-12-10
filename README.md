@@ -97,12 +97,12 @@ It also has the potential to improve the performance of model loading on CPU and
 Converting to .safetensors is recommended for stable diffusion users who want to improve the security and performance of their model storage and loading processes. It is especially useful for when distributing new models and merges.
 
 
-<img src="media/preview/2.png">
+<img src="media/preview/1_0.1.0.png">
 
 The tool's graphical user interface (GUI) makes it easy for users to select the input files, view the progress of the conversion saving process.
 
-<img src="media/preview/3.png">
-
+<img src="media/preview/6_0.1.0.png">
+<img src="media/preview/4_0.1.0.png">
 
 Note that the conversion process still requires the .ckpt data to be loaded first, which means potentially loading pickles. It is recommended to scan for pickles before converting a model or convert online if no .safetensors version is provided. Once models start being distributed only in .safetensors format, this will no longer be necessary.
 
