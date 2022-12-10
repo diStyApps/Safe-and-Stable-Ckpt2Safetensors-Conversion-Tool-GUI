@@ -39,6 +39,8 @@ This tool conversion process still requires the .ckpt data to be loaded first, w
   </p>
 </div>
 
+
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -53,6 +55,34 @@ This tool conversion process still requires the .ckpt data to be loaded first, w
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+
+
+
+<!-- Update -->
+# Update
+### Version 0.1.0
+I am happy to share the release of version 0.1.0 of Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI
+
+This version includes the following new features and improvements:
+ * Support for converting back to ckpt. now you can convert safetensors to ckpt and vice versa.
+ * A file explorer for easier conversion.
+ * The option to add a suffix to the output file, allowing users to keep the original file.
+ * A hash check for files, displaying the first 8 characters of the hash.
+
+Please note that converting a ckpt file to a safetensors file will change the hash of the file due the structure change of the file.
+
+However, when converting back and forth between ckpt and safetensors, the hash will remain consistent.
+
+For example, an original ckpt file with the hash "ccf3615f" will be converted to a safetensors file with the hash "0248da5c", and back to a ckpt file with the hash "68ed20ac". Both hashes will remain consistent between the two file formats.
+
+Please consider donating to the project if you find it useful,so that I can maintain and improve this tool and other projects.
+
+I hope you find these new features and improvements useful. As always, i welcome your feedback and suggestions.
+
+Thank you for using my project.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
