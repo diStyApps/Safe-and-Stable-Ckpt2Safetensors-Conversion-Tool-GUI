@@ -122,6 +122,14 @@ Archived version (Windows) [Zip](https://github.com/diStyApps/Safe-and-Stable-Ck
 
 [Releases](https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI/releases)
 
+## Linux Installation (tested on python 3.8.10)
+
+* git clone this repo
+* cd into the repo
+* python3.8 -m venv venv
+* ./venv/bin/activate
+* pip install -r requirements.txt
+* python run_app_gui.py
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
