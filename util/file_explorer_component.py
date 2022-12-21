@@ -3,7 +3,9 @@ import PySimpleGUI as sg
 from dataclasses import dataclass
 from util.file_hash import get_file_hash
 import os
+from sys import platform
 import re
+
 
 FILE_ICON = "📑"
 DIRECTORY_ICON = "📂"
@@ -76,7 +78,16 @@ def get_system_files_list():
     :return: List of filenames or directories
     :rtype: List[str]
     """
-    return get_system_files(os.path.join(os.getenv("SystemDrive"), "\\"))
+    # from sys import platform
+    home_dir = os.path.expanduser( '~' )
+    userDocs = os.path.join(home_dir, "Documents")
+    if platform == "linux" or platform == "linux2":
+        return get_system_files(userDocs)
+    elif platform == "darwin":
+        return get_system_files(userDocs)
+    elif platform == "win32":
+        # not sure if this is the best way to get the system drive or documents
+        return get_system_files(os.path.join(os.getenv("SystemDrive"), "\\"))
 
 def layout():
 
