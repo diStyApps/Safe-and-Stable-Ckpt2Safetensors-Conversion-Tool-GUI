@@ -115,9 +115,9 @@ It is important to always check if the model works correctly before deleting the
 <!-- Downloads -->
 ## Downloads
 
-Archived version (Windows) [7z](https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI/releases/download/0.1.0/Safe-and-Stable-Ckpt2Safetensors-GUI.v0.1.0.7z)
+Archived version (Windows) [7z](https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI/releases/download/0.1.1/Safe-and-Stable-Ckpt2Safetensors-GUI.v0.1.1.7z)
 
-Archived version (Windows) [Zip](https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI/releases/download/0.1.0/Safe-and-Stable-Ckpt2Safetensors-GUI.v0.1.0.zip)
+Archived version (Windows) [Zip](https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI/releases/download/0.1.1/Safe-and-Stable-Ckpt2Safetensors-GUI.v0.1.1.zip)
 
 
 [Releases](https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI/releases)
