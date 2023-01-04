@@ -60,8 +60,8 @@ This tool conversion process still requires the .ckpt data to be loaded first, w
 
 <!-- Update -->
 # Update
-### Version 0.1.0
-I am happy to share the release of version 0.1.0 of Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI
+### Version 0.1.1
+I am happy to share the release of version 0.1.1 of Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI
 
 This version includes the following new features and improvements:
  * Support for converting back to ckpt. now you can convert safetensors to ckpt and vice versa.
