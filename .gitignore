@@ -132,6 +132,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
 # other
 tests
 up.md
+.DS_Store
