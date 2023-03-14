@@ -183,6 +183,7 @@ def main():
         try:
             print(f'{CONVERTING_TXT} {filename} [{model_hash}] to {CKPT_STR}.')
             weights = load_file(filename, device=device)
+            weights["state_dict"] = weights
             checkpoint_filename = f"{os.path.splitext(filename)[0]}-cnvrtd.{CKPT_STR}" if suffix else f"{os.path.splitext(filename)[0]}.{CKPT_STR}"
             save_checkpoint(weights, checkpoint_filename)
             print(f'Saving {checkpoint_filename} [{get_file_hash(checkpoint_filename)}].')
